@@ -1,10 +1,12 @@
+-- CREATE DATABASE "songs";
+
 -- Table structure
 CREATE TABLE songs (
-	id serial primary key,
-	rank integer,
-	artist varchar(80) not null,
-	track varchar(120) not null,
-	published date
+	id SERIAL PRIMARY KEY,
+	rank INTEGER,
+	artist VARCHAR(80) NOT NULL,
+	track VARCHAR(120) NOT NULL,
+	published DATE
 );
 
 INSERT INTO songs (artist, track, published)
