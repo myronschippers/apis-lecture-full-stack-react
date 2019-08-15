@@ -1,4 +1,4 @@
--- CREATE DATABASE "songs";
+-- CREATE DATABASE "full-stack-react";
 
 -- Table structure
 CREATE TABLE songs (
