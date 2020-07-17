@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
     const sqlText = `SELECT * FROM songs ORDER BY published, artist, track DESC;`;
     pool.query(sqlText)
         .then((result) => {
-            console.log(`Got stuff back from the database`, result);
+            // console.log(`Got stuff back from the database`, result);
             res.send(result.rows);
         })
         .catch((error) => {
@@ -39,6 +39,7 @@ router.post('/', (req, res) => {
     const newSong = req.body;
     const sqlText = `INSERT INTO songs (rank, artist, track, published) VALUES 
   ($1, $2, $3, $4)`;
+  console.log('POST:', newSong);
     // Let sql sanitize your inputs (NO Bobby Drop Tables here!)
     // the $1, $2, etc get substituted with the values from the array below
     pool.query(sqlText, [newSong.rank, newSong.artist, newSong.track, newSong.published])
